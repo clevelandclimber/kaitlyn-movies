@@ -1,0 +1,30 @@
+<div id="<%= dom_id movie %>">
+  <p>
+    <h3>
+      <%= image_tag "movies/posters/#{movie.poster}", { height: 20 } if movie.poster %>
+      <%= link_to movie.name, movie %> (<%= movie.year ? movie.year : "?" %>)
+      <%= link_to "IMDB", movie.imdb if movie.imdb %>
+    </h3>
+  </p>
+  <p>
+    <strong>Starring:</strong>
+    <% movie.actors.each do |actor| %>
+    <div><%= actor.name %></div>
+    <% end %>
+  <p>
+    <%= "⭐️" * movie.rating if movie.rating %>
+    <%= Movie.enum_to_s :believable, movie.believable %>
+  </p>
+  <p>
+    <strong>Must see:</strong>
+    <%= Movie.enum_to_s :must_see, movie.must_see %>
+  </p>
+  <p>
+    <strong>Premise:</strong>
+    <%= movie.premise %>
+  </p>
+  <p>
+    <strong>Notes:</strong>
+    <%= movie.notes %>
+  </p>
+</div>

@@ -1,0 +1,4 @@
+
+    <%= image_tag "actors/#{actor.photo}", { height: 40 } if actor.photo %>
+    <b><%= link_to actor.name, actor %></b>
+    <%= link_to "IMDB", actor.imdb if actor.imdb %>

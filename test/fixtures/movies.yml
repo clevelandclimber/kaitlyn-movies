@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  year: 1
+  believability: 1
+  rating: 1
+  imdb: MyString
+  poster: MyString
+  must_see: 1
+  premise: MyText
+  sort_name: MyString
+  notes: MyText
+
+two:
+  name: MyString
+  year: 1
+  believability: 1
+  rating: 1
+  imdb: MyString
+  poster: MyString
+  must_see: 1
+  premise: MyText
+  sort_name: MyString
+  notes: MyText

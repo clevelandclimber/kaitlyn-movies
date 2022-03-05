@@ -1,0 +1,22 @@
+bundle exec rails server --binding 0.0.0.0
+
+# change the puma.db file so we can set the interface to 0.0.0.0 (i.e. rails server --binding 0.0.0.0)
+puma.db:
+  bind "tcp://#{ENV.fetch('INTERFACE', '127.0.0.1')}:#{ENV.fetch('PORT', '3000')}"
+docker-compose.yml:
+  INTERFACE: "0.0.0.0"
+
+# to put binstubs in a different directory (warning: spring does not follow this convention)
+bundle config set --local bin .bundle/bin
+
+# to change from sqlite3 to postresql (there's more to do than just this!)
+rails db:system:change --to=postgresql
+
+# to save some credentials
+EDITOR=vim bin/rails credentials:edit --environment development
+
+rails db:create
+rails db:migrate
+
+
+rails generate scaffold Movie name:string year:integer believability:integer rating:integer imdb:string poster:string must_see:integer premise:text sort_name:string notes:text

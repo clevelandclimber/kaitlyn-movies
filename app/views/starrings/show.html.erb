@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @starring %>
+
+<div>
+  <%= link_to "Edit this starring", edit_starring_path(@starring) %> |
+  <%= link_to "Back to starrings", starrings_path %>
+
+  <%= button_to "Destroy this starring", @starring, method: :delete %>
+</div>
