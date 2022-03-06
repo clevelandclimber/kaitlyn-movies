@@ -33,6 +33,9 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.active_job.queue_adapter = :inline # added to prevent deadlock when using active-storage variants and sqlite3
+  config.web_console.permissions = '172.23.0.1'
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 

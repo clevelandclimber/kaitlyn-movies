@@ -13,14 +13,5 @@ class Movie < ApplicationRecord
   def supporting_actors
     actors.where(starrings: { role: :support }).order(:name)
   end
-
-  # Author.joins(:books).where(books: { author: author })
-# Author.joins(:books).where(books: { author: author })
-  # scope :created_in_time_range, ->(time_range) {
-  #   where(created_at: time_range)
-  # }
-  # def self.created_before(time)
-  #   where("created_at < ?", time) if time.present?
-  # end
-  # https://guides.rubyonrails.org/active_storage_overview.html
+#%= image_tag user.avatar.variant(:thumb)
 end
