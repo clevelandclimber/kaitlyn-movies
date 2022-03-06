@@ -6,6 +6,14 @@ class Movie < ApplicationRecord
   has_many :starrings
   has_many :actors, through: :starrings
 
+  def leading_actors
+    actors.where(starrings: { role: :lead }).order(:name)
+  end
+
+  def supporting_actors
+    actors.where(starrings: { role: :support }).order(:name)
+  end
+
   # Author.joins(:books).where(books: { author: author })
 # Author.joins(:books).where(books: { author: author })
   # scope :created_in_time_range, ->(time_range) {

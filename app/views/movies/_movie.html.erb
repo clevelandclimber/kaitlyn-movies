@@ -7,10 +7,17 @@
     </h3>
   </p>
   <p>
-    <strong>Starring:</strong>
-    <% movie.actors.each do |actor| %>
-    <div><%= actor.name %></div>
+    <strong>Leads:</strong>
+    <% movie.leading_actors.each do |actor| %>
+      <div><%= actor.name %></div>
     <% end %>
+  </p>
+  <p>
+    <strong>Supporting Actors:</strong>
+    <% movie.supporting_actors.each do |actor| %>
+      <div><%= actor.name %></div>
+    <% end %>
+  </p>
   <p>
     <%= "⭐️" * movie.rating if movie.rating %>
     <%= Movie.enum_to_s :believable, movie.believable %>
