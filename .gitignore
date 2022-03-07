@@ -39,6 +39,5 @@
 .env
 *.key
 
-/app/assets/images/actors
-/app/assets/images/movies
+/db/seeds
 /notion
