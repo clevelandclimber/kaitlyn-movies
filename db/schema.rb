@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_06_032413) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_06_234748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,7 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_06_032413) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
     t.string "imdb"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -56,7 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_06_032413) do
     t.integer "believable"
     t.integer "rating"
     t.string "imdb"
-    t.string "poster"
     t.integer "must_see"
     t.text "premise"
     t.string "sort_name"

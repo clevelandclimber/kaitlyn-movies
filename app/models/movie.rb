@@ -6,6 +6,10 @@ class Movie < ApplicationRecord
   has_many :starrings
   has_many :actors, through: :starrings
 
+  has_one_attached :poster do |attachable|
+    attachable.variant :thumb, resize_to_limit: [100, 100]
+  end
+
   def leading_actors
     actors.where(starrings: { role: :lead }).order(:name)
   end
@@ -13,5 +17,5 @@ class Movie < ApplicationRecord
   def supporting_actors
     actors.where(starrings: { role: :support }).order(:name)
   end
-#%= image_tag user.avatar.variant(:thumb)
+
 end

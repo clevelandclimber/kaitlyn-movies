@@ -1,7 +1,7 @@
 <div id="<%= dom_id movie %>">
   <p>
     <h3>
-      <%= image_tag "movies/posters/#{movie.poster}", { height: 20 } if movie.poster %>
+      <%= image_tag movie.poster.variant(:thumb) if movie.poster.attached? %>
       <%= link_to movie.name, movie %> (<%= movie.year ? movie.year : "?" %>)
       <%= link_to "IMDB", movie.imdb if movie.imdb %>
     </h3>

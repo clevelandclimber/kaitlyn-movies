@@ -1,4 +1,4 @@
 
-     <%= image_tag actor.photo2.variant(:thumb) if actor.photo2.attached? %>
+     <%= image_tag actor.photo.variant(:thumb) if actor.photo.attached? %>
     <b><%= link_to actor.name, actor %></b>
     <%= link_to "IMDB", actor.imdb if actor.imdb %>
