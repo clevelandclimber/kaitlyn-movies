@@ -18,4 +18,12 @@ class Movie < ApplicationRecord
     actors.where(starrings: { role: :support }).order(:name)
   end
 
+  def poster_missing
+    ActiveStorage::Blob.find_by_key(:movie_poster_missing)
+  end
+
+  def poster_image
+    poster.attached? ? poster : poster_missing
+  end
+
 end

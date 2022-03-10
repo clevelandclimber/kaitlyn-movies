@@ -4,10 +4,12 @@
 
 
 <div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <hr>
-
+  <% @movies.each_slice(3) do |slice| %>
+    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      <% slice.each do |movie| %>
+        <%= render movie %>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

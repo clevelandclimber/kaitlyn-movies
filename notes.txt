@@ -18,5 +18,59 @@ EDITOR=vim bin/rails credentials:edit --environment development
 rails db:create
 rails db:migrate
 
+psql -h db -U developer -d workspace_development
+
+ActiveStorage::Blob.create_and_upload!(key: :movie_poster_missing, io: File.open("db/seeds/images/movies/movie-poster-missing.png"), filename: "poster missing.png")
+
 
 rails generate scaffold Movie name:string year:integer believability:integer rating:integer imdb:string poster:string must_see:integer premise:text sort_name:string notes:text
+
+'pigeon-post': {
+    '50': '#f7fcfd',
+    '100': '#f0f8fa',
+    '200': '#e0edf2',
+    '300': '#a9c9d6',
+    '400': '#8eaebe',
+    '500': '#5e8091',
+    '600': '#425f6e',
+    '700': '#2e4b5a',
+    '800': '#193240',
+    '900': '#0b1e2e',
+},
+https://uicolors.app/create
+
+      <div class="px-6 pt-4 pb-2">
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+      </div>
+
+
+        <%= link_to "IMDB", movie.imdb if movie.imdb %>
+      <%= movie.notes %>
+
+
+      <div class="px-6 pt-4 pb-2">
+        <strong>Starring:</strong>
+        <% movie.leading_actors.each do |actor| %>
+          <div><%= render actor %></div>
+        <% end %>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <strong>Also:</strong>
+        <% movie.supporting_actors.each do |actor| %>
+          <div><%= actor.name %></div>
+        <% end %>
+      </div>
+
+
+    <div class="px-6 pt-4 pb-2">
+      <%= "⭐️" * movie.rating if movie.rating %>
+      <%= Movie.enum_to_s :believable, movie.believable %>
+    </div>
+
+
+
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+<h1>Products</h1>
+<%= render(@products) || "There are no products available." %>

@@ -1,37 +1,16 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <h3>
-      <%= image_tag movie.poster.variant(:thumb) if movie.poster.attached? %>
-      <%= link_to movie.name, movie %> (<%= movie.year ? movie.year : "?" %>)
-      <%= link_to "IMDB", movie.imdb if movie.imdb %>
-    </h3>
-  </p>
-  <p>
-    <strong>Leads:</strong>
-    <% movie.leading_actors.each do |actor| %>
-      <div><%= actor.name %></div>
-    <% end %>
-  </p>
-  <p>
-    <strong>Supporting Actors:</strong>
-    <% movie.supporting_actors.each do |actor| %>
-      <div><%= actor.name %></div>
-    <% end %>
-  </p>
-  <p>
-    <%= "⭐️" * movie.rating if movie.rating %>
-    <%= Movie.enum_to_s :believable, movie.believable %>
-  </p>
-  <p>
-    <strong>Must see:</strong>
-    <%= Movie.enum_to_s :must_see, movie.must_see %>
-  </p>
-  <p>
-    <strong>Premise:</strong>
-    <%= movie.premise %>
-  </p>
-  <p>
-    <strong>Notes:</strong>
-    <%= movie.notes %>
-  </p>
+<div class="p-5" id="<%= dom_id movie %>">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <!-- height: 132 -->
+    <%= image_tag movie.poster_image, size: "255x132", class: "w-full max-h-40 object-cover" %>
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2"><%= movie.name %> (<%= movie.year ? movie.year : "?" %>)</div>
+      <p class="text-gray-700 text-base">
+        <%= movie.premise %>
+      </p>
+    </div>
+    <div class="px-6 pt-1 pb-2">
+      <strong>Must see:</strong>
+      <%= Movie.enum_to_s :must_see, movie.must_see %>
+    </div>
+  </div>
 </div>
