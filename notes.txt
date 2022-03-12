@@ -20,6 +20,8 @@ rails db:migrate
 
 psql -h db -U developer -d workspace_development
 
+blob = ActiveStorage::Blob.find_by_key(:movie_poster_missing)
+blob.purge if blob
 ActiveStorage::Blob.create_and_upload!(key: :movie_poster_missing, io: File.open("db/seeds/images/movies/movie-poster-missing.png"), filename: "poster missing.png")
 
 

@@ -3,13 +3,9 @@
 <h1>Movies</h1>
 
 
-<div id="movies">
-  <% @movies.each_slice(3) do |slice| %>
-    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-      <% slice.each do |movie| %>
-        <%= render movie %>
-      <% end %>
-    </div>
+<div id="movies" class="p-5 flex flex-wrap items-stretch">
+  <% @movies.each do |movie| %>
+    <%= render movie %>
   <% end %>
 </div>
 

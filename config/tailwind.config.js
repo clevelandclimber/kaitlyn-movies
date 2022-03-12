@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      aspectRatio: {
+        '16/9': '16 / 9',
+      },
     },
   },
   plugins: [

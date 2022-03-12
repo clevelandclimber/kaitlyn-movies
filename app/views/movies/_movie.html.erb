@@ -1,10 +1,12 @@
-<div class="p-5" id="<%= dom_id movie %>">
+<div class="p-5 flex-none w-80" id="<%= dom_id movie %>">
   <div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <!-- height: 132 -->
-    <%= image_tag movie.poster_image, size: "255x132", class: "w-full max-h-40 object-cover" %>
+    <div class="aspect-16/9">
+      <%= image_tag movie.poster_image, class: "w-full h-full object-cover" %>
+    </div>
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2"><%= movie.name %> (<%= movie.year ? movie.year : "?" %>)</div>
-      <p class="text-gray-700 text-base">
+      <p class="font-bold text-gray-900"><%= movie.name %></p>
+      <p class="text-gray-400 text-xs"><%= movie.year ? movie.year : "?" %></p>
+      <p class="text-gray-700 text-sm mt-2">
         <%= movie.premise %>
       </p>
     </div>
