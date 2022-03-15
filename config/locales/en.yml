@@ -41,7 +41,7 @@ en:
           youre_kidding_me: "🤣 You have got to be kidding me!"
         must_sees:
           "no": "❌"
-          "yes": "✔️"
-          yes_yes: "✔️✔️"
+          "yes": "✔️ Must See"
+          yes_yes: "✔️✔️ Double Must See"
 
 #=> [10004, 65039, 10004, 65039]

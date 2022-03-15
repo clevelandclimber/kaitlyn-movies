@@ -1,12 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<!--
+   <button id="Button" onclick="toggleDark()">Dark</button>
+<script>
+    function toggleDark() {
+        var para = document.getElementById("body");
+        para.classList.toggle("dark");
+    }
+</script>
+-->
 
-<h1>Movies</h1>
+<div class="flex flex-col">
+  <p style="color: green"><%= notice %></p>
+  <h1>Movies</h1>
+  <div id="movies" class="grid py-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 auto-fr gap-8 mx-auto justify-items-center">
+    <% @movies.first(6).each do |movie| %>
+      <%= render movie %>
+    <% end %>
+  </div>
 
-
-<div id="movies" class="p-5 flex flex-wrap items-stretch">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-  <% end %>
+  <p>
+  <%= link_to "New movie", new_movie_path %>
+  </p>
 </div>
-
-<%= link_to "New movie", new_movie_path %>

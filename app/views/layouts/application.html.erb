@@ -11,9 +11,39 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body id="body" class="">
+    <nav class="flex items-center justify-between flex-wrap bg-fuchsia-100 px-6 pt-2 text-pink-400 dark:text-pink-700 shadow shadow-pink-400/30 dark:bg-pink-900">
+      <%= link_to root_path do %><%= show_svg "ksmovies.svg", alt: "K's Movies", class: "w2-48 fill-pink-400 dark:fill-pink-700" %><% end %>
+      <div class="sm:hidden">
+    <!--
+        <button class="flex items-center px-2 py-2 text-pink-400 hover:text-white hover:bg-pink-400 rounded" onClick="toggleNavLinks();">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 2h20v3H0V3zm0 7h20v3H0V9zm0 7h20v3H0z"/></svg>
+        </button>
+    -->
+      </div>
+      <div id="nav-links" class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block sm:visible">
+        <%= highlight_link_to "Movies", movies_path, class: "block mt-2 sm:inline-block sm:mt-0 ml-6 sm:text-lg", active: "underline underline-offset-8 decoration-8" %>
+        <%= highlight_link_to "Actors", actors_path, class: "block mt-2 sm:inline-block sm:mt-0 ml-4 sm:text-lg", active: "underline underline-offset-8 decoration-8" %>
+        <%= link_to "TODO" do %>
+          <%= show_svg "gear.svg", class: "w-6 fill-pink-400 dark:fill-pink-700 block mt-2 ml-4 sm:hidden" %>
+        <% end %>
+      </div>
+      <div class="hidden sm:inline-block ml-4">
+        <%= link_to "TODO" do %>
+          <%= show_svg "gear.svg", class: "w-6 fill-pink-400 dark:fill-pink-700" %>
+        <% end %>
+      </div>
+    </nav>
+    <main class="p-4 mx-auto bg-fuchsia-50 dark:bg-neutral-900 h-screen">
       <%= yield %>
     </main>
   </body>
+  <script>
+  // if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  //  document.documentElement.classList.add('dark')
+  // }
+  // else {
+  //   document.documentElement.classList.remove('dark')
+  // }
+  </script>
 </html>
