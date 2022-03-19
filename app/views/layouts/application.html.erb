@@ -12,25 +12,22 @@
   </head>
 
   <body id="body" class="">
-    <nav class="flex items-center justify-between flex-wrap bg-fuchsia-100 px-6 pt-2 text-pink-400 dark:text-pink-700 shadow shadow-pink-400/30 dark:bg-pink-900">
-      <%= link_to root_path do %><%= show_svg "ksmovies.svg", alt: "K's Movies", class: "w2-48 fill-pink-400 dark:fill-pink-700" %><% end %>
-      <div class="sm:hidden">
-    <!--
+    <nav class="flex items-center justify-between flex-wrap bg-fuchsia-100 px-6 pt-2 text-pink-400 dark:text-pink-700 shadow shadow-pink-400/30 dark:bg-pink-900 pb-2 lg:pb-0">
+      <%= link_to root_path do %><%= svg_tag "ksmovies.svg", alt: "K's Movies", class: "fill-pink-400 dark:fill-pink-700" %><% end %>
+      <div class="md:hidden">
         <button class="flex items-center px-2 py-2 text-pink-400 hover:text-white hover:bg-pink-400 rounded" onClick="toggleNavLinks();">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 2h20v3H0V3zm0 7h20v3H0V9zm0 7h20v3H0z"/></svg>
+          <%= svg_tag "icon-menu.svg", class: "w-6 fill-pink-400 dark:fill-pink-700" %>
         </button>
-    -->
       </div>
-      <div id="nav-links" class="w-full flex-grow sm:flex sm:items-center sm:w-auto sm:block sm:visible">
-        <%= highlight_link_to "Movies", movies_path, class: "block mt-2 sm:inline-block sm:mt-0 ml-6 sm:text-lg", active: "underline underline-offset-8 decoration-8" %>
-        <%= highlight_link_to "Actors", actors_path, class: "block mt-2 sm:inline-block sm:mt-0 ml-4 sm:text-lg", active: "underline underline-offset-8 decoration-8" %>
-        <%= link_to "TODO" do %>
-          <%= show_svg "gear.svg", class: "w-6 fill-pink-400 dark:fill-pink-700 block mt-2 ml-4 sm:hidden" %>
-        <% end %>
+      <div id="nav-links" class="w-full flex-grow md:flex md:items-center md:w-auto md:block md:visible">
+        <%= highlight_link_to "Movies", movies_path, class: "block -mt-2 ml-4 md:inline-block md:ml-8 lg:ml-10 md:mt-0 md:text-base lg:text-lg", active: "pl-1 border-l-4 border-pink-400 md:pl-0 md:border-l-0 md:underline md:underline-offset-8 md:decoration-4 lg:decoration-8" %>
+        <%= highlight_link_to "Actors", actors_path, class: "block mt-1  ml-4 md:inline-block md:ml-6 lg:ml-8  md:mt-0 md:text-base lg:text-lg", active: "pl-1 border-l-4 border-pink-400 md:pl-0 md:border-l-0 md:underline md:underline-offset-8 md:decoration-4 lg:decoration-8" %>
+        <%= highlight_link_to "Read Me", about_path, class: "block mt-1  ml-4 md:inline-block md:ml-6 lg:ml-8  md:mt-0 md:text-base lg:text-lg", active: "pl-1 border-l-4 border-pink-400 md:pl-0 md:border-l-0 md:underline md:underline-offset-8 md:decoration-4 lg:decoration-8" %>
+        <%= highlight_link_to "Settings", "TODO",    class: "block mt-1  ml-4 md:hidden",   active: "pl-1 border-l-4 border-pink-400" %>
       </div>
-      <div class="hidden sm:inline-block ml-4">
+      <div class="hidden md:inline-block ml-4">
         <%= link_to "TODO" do %>
-          <%= show_svg "gear.svg", class: "w-6 fill-pink-400 dark:fill-pink-700" %>
+          <%= svg_tag "icon-cog.svg", class: "w-6 fill-pink-400 dark:fill-pink-700" %>
         <% end %>
       </div>
     </nav>

@@ -13,7 +13,7 @@
   <h1>Movies</h1>
   <div id="movies" class="grid py-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 auto-fr gap-8 mx-auto justify-items-center">
     <% @movies.first(6).each do |movie| %>
-      <%= render movie %>
+      <%= render partial: "movie_summary", locals: { movie: movie } %>
     <% end %>
   </div>
 

@@ -1,0 +1,60 @@
+<div class="mx-auto grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 text-gray-800">
+  <div class="bg-orange-100 border border-orange-400 shadow-lg bg-gray-100 rounded-lg p-4 transition-all duration-75 scale-95 origin-center hover:scale-100 md:scale-100 hover:md:scale-105 hover:z-40 md:origin-top-left flex flex-col">
+    <h2 class="font-bold text-lg text-pink-300 mb-2">Inspiration</h2>
+    <p class="grow">
+    Ever watch those really bad Christmas-Royal romanance movies? We did! Here's our thoughts on the ones we've watched.
+    </p>
+    <p class="mt-2 text-xs text-grey-900">
+    The movie images in this demo are scraped from the internet and are not licensed. Some have been altered.
+    </p>
+  </div>
+  <div class="bg-orange-100 border border-orange-400 shadow-lg bg-gray-100 rounded-lg p-4 transition-all duration-75 scale-95 origin-center hover:scale-100 md:scale-100 hover:md:scale-105 hover:z-40 md:origin-top md:origin-top-right lg:origin-top">
+    <h2 class="font-bold text-lg text-pink-300 mb-2">Technologies</h2>
+    <p>This site is a demonstration of Rails 7 on Docker using these components:</p>
+    <ul class="list-disc ml-6 mt-2 text-gray-900 text-sm">
+      <li>Docker 20.10.12, build e91ed57</li>
+      <li>Docker Compose 2.2.3</li>
+      <li>Ruby 3.1.1</li>
+      <li>Rails 7.0.x</li>
+      <li>Tailwind 3</li>
+      <li>PostgreSQL 14.2</li>
+    </ul>
+  </div>
+  <div class="bg-orange-100 border border-orange-400 shadow-lg bg-gray-100 rounded-lg p-4 transition-all duration-75 scale-95 origin-center hover:scale-100 md:scale-100 hover:md:scale-105 hover:z-40 md:origin-left lg:origin-top-right xl:origin-top">
+    <h2 class="font-bold text-lg text-pink-300 mb-2">Features</h2>
+    <ul class="list-disc ml-6 mt-2 text-gray-900 text-sm">
+      <li>responsive design</li>
+      <li>dark mode: on, off, system</li>
+    </ul>
+  </div>
+  <div class="bg-orange-100 border border-orange-400 shadow-lg bg-gray-100 rounded-lg p-4 transition-all duration-75 scale-95 origin-center hover:scale-100 md:scale-100 hover:md:scale-105 hover:z-40 md:origin-right lg:origin-bottom-left xl:origin-top-right">
+    <h2 class="font-bold text-lg text-pink-300 mb-2">Thanks To</h2>
+    <ul class="list-disc ml-6 mt-2 text-gray-900 text-sm">
+      <li>Hero Icons created by <a class="text-pink-400 inline-block" href="https://github.com/sschoger/heroicons-ui"><span class="underline">Steve Schoger</span> <%= svg_tag "icon-external-link.svg", class: "w-3 pb-1 inline-block align-top fill-pink-400" %></a></li>
+      <li>svg_tag</li>
+      <li>active_link_to</li>
+      <li>avdi</li>
+      <li>l'amour banner for Netflix FR</li>
+    </ul>
+  </div>
+  <div class="bg-orange-100 border border-orange-400 shadow-lg bg-gray-100 rounded-lg p-4 transition-all duration-75 scale-95 origin-center hover:scale-100 md:scale-100 hover:md:scale-105 hover:z-40 md:origin-bottom-right md:col-start-2 lg:col-start-3 xl:col-start-4">
+    <h2 class="font-bold text-lg text-pink-300 mb-2">To Do</h2>
+    <ul class="list-disc ml-6 mt-2 text-gray-900 text-sm">
+      <li>No production mode</li>
+      <li>Dark Mode</li>
+      <li>Search</li>
+      <li>Hamburger callpase on narrow screens</li>
+      <li>Tests</li>
+      <li>CI</li>
+      <li>Screen Readers</li>
+    </ul>
+  </div>
+<!-- TODO
+remind me to remove limits on Movies.index and Actors.index
+
+rails db:create
+rails db:seed
+bin/dev
+-->
+</div>
+</div>

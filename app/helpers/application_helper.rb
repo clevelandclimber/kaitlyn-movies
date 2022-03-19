@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   # this code is very slightly modified from Khash Sajadi's blog: https://blog.cloud66.com/using-svgs-in-a-rails-stack/
-  def show_svg(filename, options = {})
+  def svg_tag(filename, options = {})
     assets = Rails.application.assets
     asset = assets.find_asset(filename)
     if asset

@@ -1,11 +1,5 @@
-<div class="flex flex-col w-72 rounded overflow-hidden shadow-lg dark:bg-neutral-800 mx-auto relative">
-  <%= link_to "TODO" do %>
-    <div class="absolute bg-pink-400 bottom-1 right-1 rounded-full">
-      <%= show_svg "icon-edit.svg", class: "p-2 w-9 h-9 fill-pink-50 dark:fill-pink-700" %>
-    </div>
-  <% end %>
+<%= link_to movie, class: "flex flex-col w-72 rounded overflow-hidden shadow-lg dark:bg-neutral-800" do %>
   <%= image_tag movie.poster_image, class: "aspect-16/9 w-full object-cover", alt: "Poster for #{movie.name}" %>
-  <div>DETAILS</div>
   <div class="px-6 py-4 grow">
     <p class="font-bold text-gray-900 dark:text-gray-300"><%= movie.name %></p>
     <p class="text-gray-400 text-xs"><%= movie.year ? movie.year : "?" %></p>
@@ -22,4 +16,4 @@
     <% end %>
 -->
   </div>
-</div>
+<% end %>
